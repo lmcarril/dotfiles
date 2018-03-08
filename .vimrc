@@ -37,6 +37,7 @@ Plugin 'tomtom/tcomment_vim'
 "Plugin 'maksimr/vim-jsbeautify'
 "Plugin 'vim-syntastic/syntastic'
 "Plugin 'neomake/neomake'
+Plugin 'Valloric/YouCompleteMe'
 
 " Git 
 Plugin 'tpope/vim-fugitive'
