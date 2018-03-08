@@ -20,7 +20,7 @@ Plugin 'majutsushi/tagbar'
 "Plugin 'junegunn/fzf.vim'
 "Plugin 'junegunn/fzf'
 "Plugin 'godlygeek/tabular'
-"Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'benmills/vimux'
 "Plugin 'jeetsukumaran/vim-buffergator'
 "Plugin 'gilsondev/searchtasks.vim'
@@ -130,3 +130,13 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" enter newline without edit mode with Enter
+nmap <CR> o<Esc>
+
+" ctr + i gos into insert mode for a single character and goes back to normal mode
+nnoremap <C-i> i_<Esc>r
+
+" Change the default mapping and the default command to invoke CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
