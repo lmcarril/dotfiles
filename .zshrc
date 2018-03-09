@@ -61,6 +61,7 @@ ZSH_THEME="pygmalion"
 plugins=(
   git
   zsh-autosuggestions
+  history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
