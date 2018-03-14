@@ -30,7 +30,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " Generic Programming Support 
 Plugin 'jakedouglas/exuberant-ctags'
 "Plugin 'honza/vim-snippets'
-Plugin 'Townk/vim-autoclose'
+"Plugin 'Townk/vim-autoclose'
 Plugin 'tomtom/tcomment_vim'
 "Plugin 'tobyS/vmustache'
 "Plugin 'janko-m/vim-test'
@@ -124,7 +124,8 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 map <C-n> :NERDTreeToggle<CR>
 
 " Tagbar shorcut
-map <C-m> :TagbarToggle<CR>
+" map <C-m> :TagbarToggle<CR>
+map <C-b> :TagbarToggle<CR>
 
 " Easier window navigation
 nnoremap <C-J> <C-W><C-J>
