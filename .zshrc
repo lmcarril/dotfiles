@@ -62,6 +62,8 @@ plugins=(
   git
   zsh-autosuggestions
   history-substring-search
+  colored-man-pages
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
