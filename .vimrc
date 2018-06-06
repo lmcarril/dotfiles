@@ -13,31 +13,18 @@ Plugin 'VundleVim/Vundle.vim'
 " Utility
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
-"Plugin 'ervandew/supertab'
-"Plugin 'BufOnly.vim'
-"Plugin 'wesQ3/vim-windowswap'
-"Plugin 'SirVer/ultisnips'
-"Plugin 'junegunn/fzf.vim'
-"Plugin 'junegunn/fzf'
-"Plugin 'godlygeek/tabular'
 Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'benmills/vimux'
 "Plugin 'jeetsukumaran/vim-buffergator'
-"Plugin 'gilsondev/searchtasks.vim'
-"Plugin 'Shougo/neocomplete.vim'
-"Plugin 'tpope/vim-dispatch'
 
 " Generic Programming Support 
 Plugin 'jakedouglas/exuberant-ctags'
-"Plugin 'honza/vim-snippets'
-"Plugin 'Townk/vim-autoclose'
+Plugin 'Townk/vim-autoclose'
 Plugin 'tomtom/tcomment_vim'
-"Plugin 'tobyS/vmustache'
-"Plugin 'janko-m/vim-test'
-"Plugin 'maksimr/vim-jsbeautify'
 "Plugin 'vim-syntastic/syntastic'
-"Plugin 'neomake/neomake'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rhysd/vim-clang-format'
+" Plugin 'brookhong/cscope.vim'
 
 " Git 
 Plugin 'tpope/vim-fugitive'
@@ -83,6 +70,11 @@ set textwidth=120
 syntax enable
 set background=dark
 colorscheme solarized
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
 
 " turn line numbers on
 set number
@@ -113,12 +105,12 @@ set comments=sl:/*,mb:\ *,elx:\ */
 " autocmd vimenter * NERDTree
 
 " open a NERDTree automatically when vim starts up if no files were specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " open NERDTree automatically when vim starts up on opening a directory
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 " NERDTree shortcut"
 map <C-n> :NERDTreeToggle<CR>
@@ -142,3 +134,17 @@ nnoremap <C-i> i_<Esc>r
 " Change the default mapping and the default command to invoke CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" YCM extra conf whitelist
+let g:ycm_extra_conf_globlist = ['/home/luis/main-dev/.ycm_extra_conf.py']
+
+" YCM force recompile and diagnostics shortcut
+nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+" Apply YCM FixIt
+map <F9> :YcmCompleter FixIt<CR>
+
+" Vim clang format
+let g:clang_format#detect_style_file = 1
+let g:clang_format#enable_fallback_style = 0
+let g:clang_format#command = '/usr/bin/clang-format-6.0'
+
