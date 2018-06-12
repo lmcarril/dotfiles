@@ -19,7 +19,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 
 " Generic Programming Support 
 Plugin 'jakedouglas/exuberant-ctags'
-Plugin 'Townk/vim-autoclose'
 Plugin 'tomtom/tcomment_vim'
 "Plugin 'vim-syntastic/syntastic'
 Plugin 'Valloric/YouCompleteMe'
