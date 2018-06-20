@@ -16,6 +16,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'benmills/vimux'
 "Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'Raimondi/delimitMate'
 
 " Generic Programming Support 
 Plugin 'jakedouglas/exuberant-ctags'
@@ -24,6 +25,7 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rhysd/vim-clang-format'
 " Plugin 'brookhong/cscope.vim'
+Plugin 'mileszs/ack.vim'
 
 " Git 
 Plugin 'tpope/vim-fugitive'
@@ -135,12 +137,22 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 " YCM extra conf whitelist
-let g:ycm_extra_conf_globlist = ['/home/luis/main-dev/.ycm_extra_conf.py']
+let g:ycm_extra_conf_globlist = ['~/main-dev/.ycm_extra_conf.py']
 
 " YCM force recompile and diagnostics shortcut
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 " Apply YCM FixIt
 map <F9> :YcmCompleter FixIt<CR>
+
+" YCM collects tags from ctags file
+let g:ycm_collect_identifiers_from_tags_files = 1
+
+" YCM seed identifiers with syntax
+let g:ycm_seed_identifiers_with_syntax = 1
+
+" YCM auto close preview window
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " Vim clang format
 let g:clang_format#detect_style_file = 1
