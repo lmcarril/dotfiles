@@ -26,6 +26,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'rhysd/vim-clang-format'
 " Plugin 'brookhong/cscope.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'tell-k/vim-autopep8'
 
 " Git 
 Plugin 'tpope/vim-fugitive'
@@ -159,3 +160,5 @@ let g:clang_format#detect_style_file = 1
 let g:clang_format#enable_fallback_style = 0
 let g:clang_format#command = '/usr/bin/clang-format-6.0'
 
+" Auto set shell title
+:set title
