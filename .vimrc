@@ -15,8 +15,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'benmills/vimux'
-"Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'Raimondi/delimitMate'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Generic Programming Support 
 Plugin 'jakedouglas/exuberant-ctags'
@@ -162,3 +164,8 @@ let g:clang_format#command = '/usr/bin/clang-format-6.0'
 
 " Auto set shell title
 :set title
+
+" Automatically displays all buffers airline when there's only one tab open.
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'solarized'
+let g:airline_solarized_bg='dark'
