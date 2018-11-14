@@ -14,6 +14,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ivalkeen/vim-ctrlp-tjump'
+Plugin 'lokikl/vim-ctrlp-ag'
 "Plugin 'benmills/vimux'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'Raimondi/delimitMate'
@@ -120,7 +122,7 @@ set comments=sl:/*,mb:\ *,elx:\ */
 map <C-n> :NERDTreeToggle<CR>
 
 " Tagbar shorcut
-" map <C-m> :TagbarToggle<CR>
+" map <C-b> :TagbarToggle<CR>
 map <C-b> :TagbarToggle<CR>
 
 " Easier window navigation
@@ -167,5 +169,25 @@ let g:clang_format#command = '/usr/bin/clang-format-6.0'
 
 " Automatically displays all buffers airline when there's only one tab open.
 let g:airline#extensions#tabline#enabled = 1
+
+" Only display the filename in the airline
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" Dar solarized theme for airline
 let g:airline_theme = 'solarized'
 let g:airline_solarized_bg='dark'
+
+" Limit git commit messages width
+autocmd Filetype gitcommit setlocal spell textwidth=74
+
+" CtrlPJump configuration
+nnoremap <c-]> :CtrlPtjump<cr>
+vnoremap <c-]> :CtrlPtjumpVisual<cr>
+" let g:ctrlp_tjump_only_silent = 1
+
+" VimCtrlPAg configuration
+nnoremap <c-f> :CtrlPag<cr>
+vnoremap <c-f> :CtrlPagVisual<cr>
+nnoremap <leader>ca :CtrlPagLocate
+nnoremap <leader>cp :CtrlPagPrevious<cr>
+let g:ctrlp_ag_ignores = '--ignore .git'
