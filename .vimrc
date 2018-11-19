@@ -141,6 +141,9 @@ nnoremap <C-i> i_<Esc>r
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+" Increase the size of the CtrlP window content but maintain the window size
+let g:ctrlp_match_window = 'bottom,order:btt,min:4,max:10,results:100'
+
 " YCM extra conf whitelist
 let g:ycm_extra_conf_globlist = ['~/main-dev/.ycm_extra_conf.py']
 
@@ -163,6 +166,9 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:clang_format#detect_style_file = 1
 let g:clang_format#enable_fallback_style = 0
 let g:clang_format#command = '/usr/bin/clang-format-6.0'
+" Apply clang format 
+map <F10> :ClangFormat<CR>
+
 
 " Auto set shell title
 :set title
@@ -183,11 +189,12 @@ autocmd Filetype gitcommit setlocal spell textwidth=74
 " CtrlPJump configuration
 nnoremap <c-]> :CtrlPtjump<cr>
 vnoremap <c-]> :CtrlPtjumpVisual<cr>
-" let g:ctrlp_tjump_only_silent = 1
+let g:ctrlp_tjump_only_silent = 1
 
 " VimCtrlPAg configuration
 nnoremap <c-f> :CtrlPag<cr>
 vnoremap <c-f> :CtrlPagVisual<cr>
-nnoremap <leader>ca :CtrlPagLocate
+nnoremap <leader>ca :CtrlPagLocate 
 nnoremap <leader>cp :CtrlPagPrevious<cr>
 let g:ctrlp_ag_ignores = '--ignore .git'
+
