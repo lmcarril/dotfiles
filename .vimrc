@@ -25,7 +25,8 @@ Plugin 'vim-airline/vim-airline-themes'
 " Generic Programming Support 
 " Plugin 'brookhong/cscope.vim'
 " Plugin 'vim-syntastic/syntastic'
-Plugin 'universal-ctags/ctags'
+" Plugin 'universal-ctags/ctags'
+" Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'mileszs/ack.vim'
@@ -101,8 +102,17 @@ set cursorline
 " highlight matching braces
 set showmatch
 
+" highlight searches
+set hlsearch
+
+"This unsets the "last search pattern" register by hitting return
+nnoremap <CR> :noh<CR><CR>
+
 " intelligent comments
 set comments=sl:/*,mb:\ *,elx:\ */
+
+" Auto set shell title
+set title
 
 " search tags from current directory upwards
 " set tags=./tags,tags;$HOME
@@ -122,7 +132,6 @@ set comments=sl:/*,mb:\ *,elx:\ */
 map <C-n> :NERDTreeToggle<CR>
 
 " Tagbar shorcut
-" map <C-b> :TagbarToggle<CR>
 map <C-b> :TagbarToggle<CR>
 
 " Easier window navigation
@@ -131,10 +140,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" enter newline without edit mode with Enter
-nmap <CR> o<Esc>
-
-" ctr + i gos into insert mode for a single character and goes back to normal mode
+" ctr + i goes into insert mode for a single character and goes back to normal mode
 nnoremap <C-i> i_<Esc>r
 
 " Change the default mapping and the default command to invoke CtrlP
@@ -146,6 +152,12 @@ let g:ctrlp_match_window = 'bottom,order:btt,min:4,max:10,results:100'
 
 " YCM extra conf whitelist
 let g:ycm_extra_conf_globlist = ['~/main-dev/.ycm_extra_conf.py']
+
+" YCM do not use clangd
+let g:ycm_use_clangd = "Never"
+
+" YCM debug level
+let g:ycm_log_level='debug'
 
 " YCM force recompile and diagnostics shortcut
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
@@ -169,9 +181,11 @@ let g:clang_format#command = '/usr/bin/clang-format-6.0'
 " Apply clang format 
 map <F10> :ClangFormat<CR>
 
-
-" Auto set shell title
-:set title
+" Syntax coloring for pgTAP files
+augroup pgtap_syntax
+  au!
+  autocmd BufNewFile,BufRead *.pg   set syntax=sql
+augroup END
 
 " Automatically displays all buffers airline when there's only one tab open.
 let g:airline#extensions#tabline#enabled = 1
@@ -190,6 +204,7 @@ autocmd Filetype gitcommit setlocal spell textwidth=74
 nnoremap <c-]> :CtrlPtjump<cr>
 vnoremap <c-]> :CtrlPtjumpVisual<cr>
 let g:ctrlp_tjump_only_silent = 1
+let g:ctrlp_tjump_skip_tag_name = 1
 
 " VimCtrlPAg configuration
 nnoremap <c-f> :CtrlPag<cr>
