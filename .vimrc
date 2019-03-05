@@ -177,7 +177,7 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 " Vim clang format
 let g:clang_format#detect_style_file = 1
 let g:clang_format#enable_fallback_style = 0
-let g:clang_format#command = '/usr/bin/clang-format-6.0'
+let g:clang_format#command = '/usr/bin/clang-format-8'
 " Apply clang format 
 map <F10> :ClangFormat<CR>
 
