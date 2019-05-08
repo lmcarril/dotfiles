@@ -182,7 +182,7 @@ let g:clang_format#detect_style_file = 1
 let g:clang_format#enable_fallback_style = 0
 let g:clang_format#command = '/usr/bin/clang-format-8'
 " Apply clang format 
-map <F10> :ClangFormat<CR>
+map <F8> :ClangFormat<CR>
 
 " Syntax coloring for pgTAP files
 augroup pgtap_syntax
