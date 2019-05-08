@@ -114,6 +114,9 @@ set comments=sl:/*,mb:\ *,elx:\ */
 " Auto set shell title
 set title
 
+" Set spell checking for markdown files
+autocmd FileType markdown setlocal spell
+
 " search tags from current directory upwards
 " set tags=./tags,tags;$HOME
 
