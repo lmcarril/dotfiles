@@ -76,6 +76,10 @@ set textwidth=120
 " turn syntax highlighting on
 syntax enable
 set background=dark
+augroup my_colours
+  autocmd!
+  autocmd ColorScheme luis hi SpellBad cterm=reverse
+augroup END
 colorscheme solarized
 if has('gui_running')
     set background=light
@@ -114,8 +118,8 @@ set comments=sl:/*,mb:\ *,elx:\ */
 " Auto set shell title
 set title
 
-" Set spell checking for markdown files
-autocmd FileType markdown setlocal spell
+" Set spell checker
+set spell spelllang=en_us
 
 " search tags from current directory upwards
 " set tags=./tags,tags;$HOME
