@@ -101,4 +101,8 @@ bindkey '^ ' autosuggest-accept
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source ~/my_tools/extra-zshrc
+FILE=~/my_tools/extra-zshrc
+if [[ -f "$FILE" ]]; then
+  source "$FILE"
+fi
+
