@@ -1,7 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 #export PATH="/Users/luis.carril/Library/Python/3.9/bin:/usr/local/opt/llvm/bin:/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
-export PATH="/usr/local/opt/llvm/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="/opt/homebrew/opt/llvm/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -109,7 +109,7 @@ if [[ -f "$FILE" ]]; then
 fi
 
 #source /usr/local/Homebrew/Library/Taps/now/homebrew-devtools/etc/zshrc
-export PATH="/usr/local/opt/mariadb@10.2/bin:$PATH"
+export PATH="/opt/homebrew/opt/mariadb@10.2/bin:$PATH"
 
 export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
 
