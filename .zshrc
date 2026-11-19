@@ -109,11 +109,9 @@ if [[ -f "$FILE" ]]; then
 fi
 
 #source /usr/local/Homebrew/Library/Taps/now/homebrew-devtools/etc/zshrc
-export PATH="/opt/homebrew/opt/mariadb@10.2/bin:$PATH"
 
-export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
 
-source ~/my_venv/bin/activate
+[ -f ~/my_venv/bin/activate ] && source ~/my_venv/bin/activate
 export PATH="$HOME/.local/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
